@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"type":"virtualbox","guestpath":"/vagrant","hostpath":"C:/Users/norif/Projects/csv_uploader","disabled":false,"owner":"vagrant","group":"vagrant","mount_options":["dmode=777","fmode=777","uid=1000","gid=1000"],"__vagrantfile":true}}}
