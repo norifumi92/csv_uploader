@@ -3,10 +3,10 @@
 sudo yum -y install centos-release-scl;
 sudo yum -y install rh-python36;
 sudo scl enable rh-python36 bash;
-#Set rh-python36 into PATH
+#Set rh-python36 into PATH 
 sudo echo 'check if root directory of python3 exists in PATH'
-if [ "`echo $PATH | grep "rh-python36"`" ]; then echo "FOUND"; else echo "export PATH="/opt/rh/rh-python36/root/bin:/usr/bin:/usr/sbin"" >> ~/.bash_profile; fi
-source ~/.bash_profile
+if [ "`echo $PATH | grep "rh-python36"`" ]; then echo "FOUND"; else echo "export PATH="/opt/rh/rh-python36/root/bin:/usr/bin:/usr/sbin"" >> /home/vagrant/.bash_profile; fi
+source /home/vagrant/.bash_profile
 
 ##To check file location, run `which [package name]`
 ##PATH is set as `/usr/bin` by default. To change the setting, edit ~/.bash_profile
@@ -34,10 +34,10 @@ if [ "`sqlite3 --version | grep "3.7"`" ]; then
 	sudo make install
 	sudo mv /usr/bin/sqlite3 /usr/bin/sqlite3_old
 	sudo ln -s /usr/local/bin/sqlite3 /usr/bin/sqlite3
-	echo "export LD_LIBRARY_PATH="/usr/local/lib"" >> ~/.bashshrc;	
+	sudo -u vagrant echo "export LD_LIBRARY_PATH="/usr/local/lib"" >> /home/vagrant/.bashshrc;	
 fi
 #Load sqlite 3.29
-source ~/.bashshrc;
+source /home/vagrant/.bashshrc;
 
 #Install GCC
 sudo yum -y install gcc;
