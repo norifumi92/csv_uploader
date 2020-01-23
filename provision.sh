@@ -1,3 +1,5 @@
+whoami;
+
 ###Install Python 3.7###
 #Use SCL
 sudo yum -y install centos-release-scl;
@@ -34,7 +36,7 @@ if [ "`sqlite3 --version | grep "3.7"`" ]; then
 	sudo make install
 	sudo mv /usr/bin/sqlite3 /usr/bin/sqlite3_old
 	sudo ln -s /usr/local/bin/sqlite3 /usr/bin/sqlite3
-	sudo -u vagrant echo "export LD_LIBRARY_PATH="/usr/local/lib"" >> /home/vagrant/.bashshrc;	
+	sudo echo "export LD_LIBRARY_PATH="/usr/local/lib"" >> /home/vagrant/.bashshrc;	
 fi
 #Load sqlite 3.29
 source /home/vagrant/.bashshrc;
