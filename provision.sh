@@ -1,3 +1,4 @@
+echo "----- provision -----"
 whoami;
 
 ###Install Python 3.7###
