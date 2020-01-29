@@ -9,7 +9,7 @@ def index(request):
     if request.method == 'POST':  
         classroom = ClassroomForm(request.POST, request.FILES)  
         if classroom.is_valid():  
-            availability = request.FILES['availablity']
+            availability = request.FILES['availability']
             reservation = request.FILES['reservation']
             #handle_uploaded_file(request.FILES['file']) 
             #total = process_csv_file(request.FILES['file'])

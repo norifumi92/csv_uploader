@@ -1,7 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
 <body>  
-    <form method="POST" class="post-form" enctype="multipart/form-data">  
+    <div class="container">
+    <form method="POST" class="form" enctype="multipart/form-data">  
             {% csrf_token %}  
-            {{ form.as_p }}  
-            <button type="submit" class="save btn btn-default">Save</button>  
-    </form>  
+            <div class="file-upload-wrapper">
+                <label>available.csvをアップロード
+                {{ form.availability }}
+                </label>
+                <p id="p01">選択されていません</p>
+            </div>
+            <div class="file-upload-wrapper">
+                <label>reserved.csvをアップロード
+                {{ form.reservation }} 
+                </label>
+                <p id="p02">選択されていません</p>
+            </div>
+            <div class="wrapper">
+            <button type="submit" class="save btn btn-default">Save</button>
+            </div>  
+    </form> 
+    </div>   
+    <script>
+            /* element */
+            var element = document.getElementById('id_availability');
+            element.addEventListener('change', changeText);
+            /* function */
+            function changeText(){
+                var filename = element.files[0].name;
+                document.getElementById('p01').innerHTML = filename;
+            };
+
+            /* element2 */
+            var element2 = document.getElementById('id_reservation');
+            element2.addEventListener('change', changeText2);
+            /* function */
+            function changeText2(){
+                var filename = element2.files[0].name;
+                document.getElementById('p02').innerHTML = filename;
+            };
+    </script>
 </body> 
+
+</html>
